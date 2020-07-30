@@ -1,0 +1,33 @@
+"""
+Nombre: ventana.py
+Objetivo: Muestra como trabajar con ventanas gui en python y tkinter
+Autor: Antonio Rodriguez
+Fecha: 29/07/2020
+"""
+
+#Importar las librerias de tkinter
+from tkinter import *
+from tkinter import ttk
+
+
+#Definimos funcion main
+def main():
+	#Creamos la ventana contenedora
+	win = Tk()
+	#Modificamos parametros de la ventana win
+	win.geometry("400x400")
+	win.title("Mi primer ventana en Python Tkinter")
+	
+	#Creamos etiqueta
+	label = ttk.Label(win, text="Texto a enviar al servidor").pack(side=TOP)
+	txtCampo = ttk.Entry(win, text="Texto a enviar al servidor").pack(side=TOP)
+	#Creamos un boton y lo colocamos en al ventana
+	ttk.Button(win, text="Salir", command=quit).pack(side=BOTTOM)
+
+	#Hacemos un ciclo para dibujar y esperar eventos
+	win.mainloop()
+
+
+#Para funcion main
+if __name__ == "__main__":
+	main()
