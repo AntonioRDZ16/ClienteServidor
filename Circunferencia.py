@@ -1,31 +1,30 @@
 """
-Nombre: Circunferencia.py
-Objetivo: muestra como trabajar en objetos con python
-Autor: Antonio Rodrìguez
-Fecha: 30/07/2020
+Nombre: circunferencia.py
+Objetivo: Permite calcular el area de una circunferencia
+Autor: Antonio Rodriguez
+Fecha: 28/07/2020
 """
+#Importamos libreria Math
 import math
-from Punto import Punto
 
-class Circunferencia(Punto):
-    #Constructor
-    def __init__(self,valorX, valorY, vRadio):
-        #Atributos de Punto
-        Punto.__init__(self, valorX, valorY)
-        #Atributo de la circunferencia
-        self.radio = vRadio
+#Funcion para calcular area
+def calcularArea(valorRadio):
+	return math.pi*math.pow(valorRadio,2)
 
-    def getRadio(self):
-        return radio
+#Modulo principal
+def main():
+	ciclo = 'S' 
+	while ciclo == 'S' or ciclo == 's':
 
-    def setRadio(self, vRadio):
-        self.radio = vRadio
-    
-    def getArea(self):
-        return math.pi*math.pow(self.radio, 2)
-
-    def toString(self):
-        return Punto.toString(self)+" y el valor del radio es: "+str(self.radio)+" y el area es: "+ str(self.getArea())
+		print ("=== Programa para calcular area de una circunferencia ===")
+		vradio = int(input("Dijita el valor del radio: "))
+		print ("\n")
+		print ("El area de la circunferencia con radio igual  a: {}, es: {}".format(vradio, calcularArea(vradio)))
+		ciclo = input("¿Otro calculo? (S/n)")
+	else:
+		print ("** Fin del programa **")
 
 
 
+if __name__ == "__main__":
+	main()
